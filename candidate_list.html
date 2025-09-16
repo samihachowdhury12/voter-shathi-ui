@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>প্রার্থী তালিকা | Voter Sathi</title>
+
+    <!-- Tailwind build -->
+    <link href="./output.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-50 font-bangla text-gray-800">
+    <!-- Header -->
+    <header class="w-full bg-white">
+      <div class="container">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Brand -->
+          <div class="flex items-center gap-4">
+            <a class="text-teal-600" href="#">
+              <img src="./images/logo.svg" alt="Voter Sathi Logo" class="h-14 w-14" />
+            </a>
+            <p class="text-lg font-semibold">ভোটের সাথী</p>
+          </div>
+
+          <!-- Nav + Login -->
+          <div class="md:flex md:items-center md:gap-12">
+            <nav aria-label="Global" class="hidden md:block">
+              <ul class="flex items-center gap-6 text-sm">
+                <li><a class="text-text-primary transition" href="#">হোম</a></li>
+                <li><a class="text-text-primary transition" href="#">প্রার্থী তালিকা</a></li>
+                <li><a class="text-text-primary transition" href="#">ভোটার টুলস</a></li>
+                <li><a class="text-text-primary transition" href="#">প্রশ্নোত্তর</a></li>
+                <li><a class="text-text-primary transition" href="#">ফলাফল</a></li>
+                <li>
+                  <!-- Language toggle -->
+                  <div class="flex items-center gap-0 rounded-full border border-[#DEE7E6] p-1">
+                    <div class="rounded-full bg-[#1B1A34] px-3 py-1 text-sm text-white">বাংলা</div>
+                    <div class="px-3 py-1 text-sm">ENG</div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Login + Mobile menu -->
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-2">
+                <img src="./images/login_icon.svg" alt="Login" class="h-6 w-6" />
+                <a class="text-sm font-medium text-text-primary" href="./login.html">লগইন করুন</a>
+              </div>
+
+              <!-- Mobile menu button -->
+              <button
+                class="block rounded-sm bg-gray-100 p-2 text-gray-600 transition-colors hover:bg-gray-200 md:hidden"
+                aria-label="মোবাইল মেনু খুলুন"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content slot -->
+    <main class="container px-4 py-10 md:px-0">
+      <!-- আপনার প্রার্থীদের সাথে পরিচিত হন section  -->
+      <section class="container relative py-[100px]">
+        <div class="">
+          <div class="mx-auto px-4 md:px-8">
+            <!-- text - start -->
+            <div class="mb-10 md:mb-16">
+              <h2 class="mb-2 text-center text-2xl font-bold text-text-primary lg:text-3xl">
+                আপনার প্রার্থীদের সাথে পরিচিত হন
+              </h2>
+
+              <p class="mx-auto text-center text-primary-300 md:text-sm">
+                আপনার এলাকায় প্রতিদ্বন্দ্বিতাকারী প্রার্থীদের সম্পর্কে জানুন। সচেতন সিদ্ধান্ত নিতে
+                তাদের প্রোফাইল, অবস্থান এবং যোগ্যতা পর্যালোচনা করুন।.
+              </p>
+            </div>
+            <!-- text - end -->
+
+            <!-- Search Bar (matches screenshot) -->
+            <div class="mb-6">
+              <div class="mx-auto max-w-md">
+                <div class="inline-flex w-full items-stretch rounded-lg shadow-sm">
+                  <!-- Input -->
+                  <label for="candidate-search" class="sr-only">প্রার্থী অনুসন্ধান</label>
+                  <input
+                    id="candidate-search"
+                    type="text"
+                    placeholder="আপনার প্রার্থী খুঁজুন ...."
+                    class="w-full rounded-l-lg border border-gray-300 px-4 py-3 text-sm outline-none focus:z-10 focus:border-primary-light focus:ring-1 focus:ring-primary-light"
+                    aria-label="প্রার্থী অনুসন্ধান"
+                  />
+                  <!-- Button with icon on the right -->
+                  <button
+                    type="button"
+                    class="rounded-r-lg border border-l-0 border-gray-300 px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:border-primary-light focus:outline-none focus:ring-1 focus:ring-primary-light"
+                    aria-label="Search"
+                  >
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filter Dropdowns in Three Columns -->
+            <div class="mb-8 flex flex-col gap-4 md:flex-row">
+              <!-- বিভাগ Dropdown -->
+              <div class="flex-1">
+                <label for="division-select" class="sr-only">বিভাগ নির্বাচন করুন</label>
+                <select
+                  id="division-select"
+                  class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-primary-light focus:outline-none focus:ring-1 focus:ring-primary-light"
+                  aria-label="বিভাগ নির্বাচন করুন"
+                >
+                  <option value="">বিভাগ নির্বাচন করুন</option>
+                  <option value="dhaka">ঢাকা</option>
+                  <option value="chittagong">চট্টগ্রাম</option>
+                  <option value="rajshahi">রাজশাহী</option>
+                  <option value="khulna">খুলনা</option>
+                  <option value="barisal">বরিশাল</option>
+                  <option value="sylhet">সিলেট</option>
+                  <option value="rangpur">রংপুর</option>
+                  <option value="mymensingh">ময়মনসিংহ</option>
+                </select>
+              </div>
+
+              <!-- জেলা Dropdown -->
+              <div class="flex-1">
+                <label for="district-select" class="sr-only">জেলা নির্বাচন করুন</label>
+                <select
+                  id="district-select"
+                  class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-primary-light focus:outline-none focus:ring-1 focus:ring-primary-light"
+                  aria-label="জেলা নির্বাচন করুন"
+                >
+                  <option value="">জেলা নির্বাচন করুন</option>
+                  <option value="dhaka">ঢাকা</option>
+                  <option value="gazipur">গাজীপুর</option>
+                  <option value="narayanganj">নারায়ণগঞ্জ</option>
+                  <option value="manikganj">মানিকগঞ্জ</option>
+                </select>
+              </div>
+
+              <!-- আসন Dropdown -->
+              <div class="flex-1">
+                <label for="seat-select" class="sr-only">আসন নির্বাচন করুন</label>
+                <select
+                  id="seat-select"
+                  class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-primary-light focus:outline-none focus:ring-1 focus:ring-primary-light"
+                  aria-label="আসন নির্বাচন করুন"
+                >
+                  <option value="">আসন নির্বাচন করুন</option>
+                  <option value="dhaka-1">ঢাকা-১</option>
+                  <option value="dhaka-2">ঢাকা-২</option>
+                  <option value="dhaka-3">ঢাকা-৩</option>
+                  <option value="dhaka-4">ঢাকা-৪</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_one.jpg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+
+                  <img
+                    class="absolute right-2 top-2"
+                    src="./images/cand-1.svg"
+                    alt="প্রার্থী প্রতীক"
+                  />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition hover:bg-primary-light hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
+                      aria-label="মোঃ নজরুল ইসলামের প্রোফাইল দেখুন"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_two.svg"
+                    loading="lazy"
+                    alt="Photo by Nick Karvounis"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+
+                  <img
+                    class="absolute right-2 top-2"
+                    src="./images/cand-2.svg"
+                    alt="প্রার্থী প্রতীক"
+                  />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition hover:bg-primary-light hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
+                      aria-label="মোঃ নজরুল ইসলামের প্রোফাইল দেখুন"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_three.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img
+                    class="absolute right-2 top-2"
+                    src="./images/cand-3.svg"
+                    alt="প্রার্থী প্রতীক"
+                  />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition hover:bg-primary-light hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
+                      aria-label="মোঃ নজরুল ইসলামের প্রোফাইল দেখুন"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_four.svg"
+                    loading="lazy"
+                    alt="Photo by Vladimir Fedotov"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img
+                    class="absolute right-2 top-2"
+                    src="./images/cand-4.svg"
+                    alt="প্রার্থী প্রতীক"
+                  />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition hover:bg-primary-light hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
+                      aria-label="মোঃ নজরুল ইসলামের প্রোফাইল দেখুন"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- Row 2 starts here -->
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_two.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-2.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_one.jpg"
+                    loading="lazy"
+                    alt="Photo by Nick Karvounis"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-1.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_four.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-4.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_three.svg"
+                    loading="lazy"
+                    alt="Photo by Vladimir Fedotov"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-3.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- Row 3 starts here -->
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_three.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-3.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_one.jpg"
+                    loading="lazy"
+                    alt="Photo by Nick Karvounis"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-1.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_two.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-2.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_four.svg"
+                    loading="lazy"
+                    alt="Photo by Vladimir Fedotov"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-4.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- Row 4 starts here -->
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_two.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-2.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_one.jpg"
+                    loading="lazy"
+                    alt="Photo by Nick Karvounis"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-1.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_two.svg"
+                    loading="lazy"
+                    alt="Photo by Austin Wade"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-2.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+
+              <!-- product - start -->
+              <div class="rounded-xl border p-1">
+                <a
+                  href="#"
+                  class="group relative block h-fit overflow-hidden rounded-t-lg bg-gray-100"
+                >
+                  <img
+                    src="./images/candidate_three.svg"
+                    loading="lazy"
+                    alt="Photo by Vladimir Fedotov"
+                    class="h-[225px] w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <img class="absolute right-2 top-2" src="./images/cand-3.svg" alt="" />
+                </a>
+
+                <div class="flex flex-col items-center justify-between gap-8 rounded-b-lg p-4">
+                  <div class="flex flex-col items-center gap-1">
+                    <span
+                      class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg"
+                    >
+                      মোঃ নজরুল ইসলাম
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">
+                      বাংলাদেশ সুপ্রীম পার্টি (বি.এস.পি)
+                    </span>
+                    <span class="text-sm text-gray-500 lg:text-base">বরিশাল-৪</span>
+                  </div>
+
+                  <div class="flex w-full flex-col items-end">
+                    <button
+                      class="w-full rounded-lg border border-primary-light px-6 py-3 text-primary-light shadow transition"
+                    >
+                      প্রোফাইল দেখুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- product - end -->
+            </div>
+          </div>
+
+          <!-- Show More Button -->
+          <div class="mt-8 flex justify-center">
+            <button
+              class="rounded-lg bg-[#2D5A27] px-8 py-3 font-medium text-white shadow-lg transition duration-200 hover:bg-[#1F3E1A]"
+            >
+              আরও দেখুন
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B4A49] pt-4 text-white sm:pt-6 lg:pt-8">
+      <div class="pt-12">
+        <div class="container">
+          <div class="mb-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-6 lg:gap-8">
+            <!-- Left: Logo + blurb -->
+            <div class="lg:col-span-2">
+              <div class="mb-4 lg:-mt-2">
+                <div class="flex items-center gap-4">
+                  <a class="text-teal-600" href="#">
+                    <img src="./images/logo.svg" alt="Voter Sathi Logo" class="h-14 w-14" />
+                  </a>
+                  <p class="text-lg font-semibold">ভোটের সাথী</p>
+                </div>
+              </div>
+
+              <p class="mb-6 opacity-65">
+                প্রার্থীদের সাথে যোগাযোগ করুন, প্রশ্ন জিজ্ঞাসা করুন এবং সচেতন সিদ্ধান্ত নিন। আমাদের
+                গণতন্ত্রের ভবিষ্যৎ গঠনে আপনার মতামত গুরুত্বপূর্ণ।
+              </p>
+
+              <div class="flex gap-4">
+                <!-- Social Media Icons -->
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white transition duration-100 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  aria-label="ফেসবুকে আমাদের অনুসরণ করুন"
+                >
+                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-red-600 text-white transition duration-100 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                  aria-label="ইউটিউবে আমাদের অনুসরণ করুন"
+                >
+                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white transition duration-100 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  aria-label="টুইটারে আমাদের অনুসরণ করুন"
+                >
+                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Nav columns -->
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
+              <div></div>
+
+              <div>
+                <div class="mb-4 font-bold uppercase tracking-widest">হোম</div>
+                <nav class="flex flex-col gap-1">
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    প্রার্থীগণ
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    প্রশ্নোত্তর
+                  </a>
+                </nav>
+              </div>
+
+              <div>
+                <div class="mb-4 text-base font-bold">ভোটার সহায়তা টুলস</div>
+                <nav class="flex flex-col gap-1">
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমি কোথায় ভোট দেব?
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আপনার অধিকার জানুন
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    ভোটের সমস্যারতি
+                  </a>
+                </nav>
+              </div>
+
+              <div>
+                <div class="mb-4 font-bold">যোগাযোগ</div>
+                <p class="text-sm leading-relaxed opacity-65">
+                  তথ্য ও যোগাযোগ প্রযুক্তি বিভাগ
+                  <br />
+                  আইসিটি টাওয়ার, আগারগাঁও, ঢাকা-১২০৭, বাংলাদেশ
+                  <br />
+                  <br />
+                  ফোন: +৮৮-০২-৪১০২৪২২২
+                  <br />
+                  ই-মেইল: admin.wing@ictd.gov.bd
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-white border-opacity-30">
+            <div class="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
+              <div class="flex items-center gap-4">
+                <p class="whitespace-nowrap">কারিগরি সহায়তায়:</p>
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                  <img src="./images/image_one.svg" class="h-[41px] w-[76px]" alt="Partner 1" />
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                  <img src="./images/image_two.svg" class="h-[41px] w-[76px]" alt="Partner 2" />
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                  <img src="./images/image_three.svg" class="h-[41px] w-[76px]" alt="Partner 3" />
+                </a>
+              </div>
+
+              <span class="text-sm text-gray-300">
+                পরিকল্পনা ও বাস্তবায়নে:
+                <span class="cursor-pointer underline">মন্ত্রিপরিষদ বিভাগ</span>
+                ,
+                <span class="cursor-pointer underline">এটুআই</span>
+                ,
+                <span class="cursor-pointer underline">বিসিসি</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#536967]">
+          <div
+            class="container flex flex-col items-center justify-between py-4 text-center text-sm sm:flex-row"
+          >
+            <span class="opacity-65">গোপনীয়তার নীতিমালা</span>
+            <span class="opacity-65">ব্যবহারের শর্তাবলি</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

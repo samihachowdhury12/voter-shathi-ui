@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter's Friend Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind build -->
+    <link href="./output.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f4f8;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-bangla">
+    <!-- Header -->
+    <header class="w-full bg-white font-bangla shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center gap-4">
+            <a class="text-teal-600" href="#">
+              <img src="./images/logo.svg" alt="Logo" class="h-14 w-14" />
+            </a>
+            <p class="font-bangla text-lg font-semibold">ভোটের সাথী</p>
+          </div>
+
+          <div class="md:flex md:items-center md:gap-12">
+            <nav aria-label="Global" class="hidden md:block">
+              <ul class="flex items-center gap-6 text-sm">
+                <li>
+                  <a
+                    class="font-bangla text-gray-700 transition hover:text-teal-600"
+                    href="./index.html"
+                  >
+                    হোম
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="font-bangla text-gray-700 transition hover:text-teal-600"
+                    href="./candidate_list.html"
+                  >
+                    প্রার্থী তালিকা
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla text-gray-700 transition hover:text-teal-600" href="#">
+                    ভোটার টুলস
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla font-medium text-teal-600 transition" href="#">
+                    প্রশ্নোত্তর
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla text-gray-700 transition hover:text-teal-600" href="#">
+                    ফলাফল
+                  </a>
+                </li>
+                <li>
+                  <div
+                    class="flex flex-row items-center gap-0 rounded-full border border-[#DEE7E6] p-1"
+                  >
+                    <div
+                      class="relative inline-block rounded-full bg-[#1B1A34] px-3 py-1 text-left text-sm text-white"
+                    >
+                      বাংলা
+                    </div>
+                    <div class="relative inline-block px-3 py-1 text-left">ENG</div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="flex cursor-pointer items-center gap-4">
+              <div class="flex cursor-pointer flex-row items-center justify-center gap-2">
+                <img src="./images/login_icon.svg" alt="Login" class="h-6 w-6" />
+                <a
+                  class="rounded-md text-sm font-medium text-gray-700 hover:text-teal-600"
+                  href="./login.html"
+                >
+                  লগইন করুন
+                </a>
+              </div>
+
+              <div class="block md:hidden">
+                <button
+                  class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto max-w-6xl px-4 py-6 md:px-8">
+      <div class="flex min-h-screen gap-6">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-sm">
+          <div class="p-6">
+            <!-- Navigation Menu -->
+            <nav class="space-y-2">
+              <!-- প্রার্থী তালিকা -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">আমার প্রশ্নসমূহ</span>
+              </a>
+
+              <!-- প্রশ্ন উত্তর (active) -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg bg-teal-600 p-2 text-white transition"
+              >
+                <div class="h-10 w-10 rounded-md bg-white"></div>
+                <span class="text-base font-normal">আপনার নিবন্ধন অবস্থা জানুন</span>
+              </a>
+
+              <!-- ভোটার টুলস -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">প্রার্থী তালিকা</span>
+              </a>
+
+              <!-- নির্বাচনী ফলাফল -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">ফলাফল</span>
+              </a>
+
+              <!-- নির্বাচনী এলাকা -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">নির্বাচন দিবস সহায়তা</span>
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">প্রোফাইল সেটিংস</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="bg--white flex-1">
+          <!-- Header Section -->
+          <div class="bg-white px-6 pt-8">
+            <!-- Go Back Button -->
+            <div class="mb-4">
+              <a
+                href="javascript:history.back()"
+                class="flex items-center text-sm font-medium text-gray-600 hover:text-teal-700"
+              >
+                <!-- Left Arrow Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mr-1 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                পেছনে ফেরত যান
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <div class="mb-4 flex items-center gap-4">
+                <img src="images\vote-yea (3) 1.png" />
+
+                <div>
+                  <p class="font-bangla text-xl font-semibold text-primary-light">
+                    আপনার নিবন্ধন অবস্থা জানুন
+                  </p>
+                  <p>সহজেই জেনে নিন আপনার ভোটার নিবন্ধনের বর্তমান অবস্থা।</p>
+                </div>
+              </div>
+            </div>
+
+            <section class="bg-gray-50 py-10">
+              <div class="container mx-auto max-w-3xl">
+                <!-- Title Row -->
+                <div class="mb-4 flex items-center justify-between">
+                  <!-- Left side -->
+                  <h2 class="text-base font-semibold text-gray-800">ভোটারের তথ্য :</h2>
+
+                  <!-- Right side -->
+                  <a href="#" class="text-sm font-medium text-red-600 hover:underline">
+                    ভোটারের তথ্য পাওয়া না গেলে করণীয়
+                  </a>
+                </div>
+
+                <!-- Success Card -->
+                <div class="rounded-md border border-gray-300 bg-[#F3F7F5] p-6 shadow-sm">
+                  <!-- Success Message -->
+                  <div class="mb-4 flex items-center gap-2">
+                    <!-- Inline image icon -->
+                    <img
+                      src="images/check_.png"
+                      alt="Success"
+                      class="inline-block h-6 w-6 align-middle"
+                    />
+
+                    <p class="text-lg font-bold text-gray-800">
+                      অভিনন্দন! আপনি ভোটার তালিকায় নিবন্ধিত আছেন!
+                    </p>
+                  </div>
+
+                  <!-- Info List -->
+                  <div class="space-y-2 font-bangla text-sm text-gray-700">
+                    <p>
+                      <span class="font-semibold">ভোটারের নাম:</span>
+                      আবুল করিম
+                    </p>
+                    <p>
+                      <span class="font-semibold">NID নম্বর:</span>
+                      1986204986
+                    </p>
+                    <p>
+                      <span class="font-semibold">জন্ম তারিখ:</span>
+                      ২৬/১০/১৯৮৬
+                    </p>
+                    <p>
+                      <span class="font-semibold">ভোটকেন্দ্রের নাম:</span>
+                      মিরপুর কেন্দ্রীয় উচ্চ বিদ্যালয়, মিরপুর, ঢাকা
+                    </p>
+                    <p>
+                      <span class="font-semibold">ঠিকানা:</span>
+                      মিরপুর ১০, ঢাকা
+                    </p>
+                    <p>
+                      <span class="font-semibold">বয়স:</span>
+                      ৩০
+                    </p>
+                    <p>
+                      <span class="font-semibold">ভোটার রেজিস্ট্রেশনের স্ট্যাটাস:</span>
+                      সক্রিয়
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Questions Section -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B4A49] pt-4 font-bangla text-white sm:pt-6 lg:pt-8">
+      <div class="pt-12 text-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-6 lg:gap-8">
+            <!-- Left: Logo, description, social -->
+            <div class="lg:col-span-2">
+              <!-- logo - start -->
+              <div class="mb-4 lg:-mt-2">
+                <div class="flex items-center gap-4">
+                  <a class="text-teal-600" href="#">
+                    <img src="./images/logo.svg" alt="Logo" class="h-14 w-14" />
+                  </a>
+                  <p class="font-bangla text-lg font-semibold">ভোটের সাথী</p>
+                </div>
+              </div>
+              <!-- logo - end -->
+
+              <p class="mb-6 font-bangla opacity-65 sm:pr-8">
+                প্রার্থীদের সাথে যোগাযোগ করুন, প্রশ্ন জিজ্ঞাসা করুন এবং সচেতন সিদ্ধান্ত নিন। আমাদের
+                গণতন্ত্রের ভবিষ্যৎ গঠনে আপনার মতামত গুরুত্বপূর্ণ।
+              </p>
+
+              <!-- social - start -->
+              <div class="flex gap-4">
+                <!-- Social Icons Here -->
+              </div>
+              <!-- social - end -->
+            </div>
+
+            <!-- Right: Nav Columns -->
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-3">
+              <!-- nav - start -->
+              <div>
+                <div class="mb-4 font-bold uppercase tracking-widest">হোম</div>
+                <nav class="flex flex-col gap-1 font-bangla">
+                  <a
+                    href="./candidate_list.html"
+                    class="opacity-65 transition duration-100 hover:opacity-100"
+                  >
+                    প্রার্থীগণ
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    প্রশ্নোত্তর
+                  </a>
+                </nav>
+              </div>
+              <!-- nav - end -->
+
+              <!-- nav - start -->
+              <div>
+                <div class="mb-4 font-bangla text-base font-bold">ভোটার সহায়তা টুলস</div>
+                <nav class="flex flex-col gap-1 font-bangla">
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    ভোটের সমস্যারতি
+                  </a>
+                </nav>
+              </div>
+              <!-- nav - end -->
+
+              <!-- nav - start -->
+              <div>
+                <div class="mb-4 font-bangla font-bold">যোগাযোগ</div>
+                <p class="font-bangla text-sm leading-relaxed opacity-65">
+                  তথ্য ও যোগাযোগ প্রযুক্তি বিভাগ
+                  <br />
+                  আইসিটি টাওয়ার, আগারগাঁও, ঢাকা-১২০৭, বাংলাদেশ
+                  <br />
+                  <br />
+                  ফোন: +৮৮-০২-৪১০২৪২২২
+                  <br />
+                  ই-মেইল: admin.wing@ictd.gov.bd
+                </p>
+              </div>
+              <!-- nav - end -->
+            </div>
+          </div>
+          <div class="border-t border-white border-opacity-30">
+            <div class="">
+              <div class="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
+                <div class="flex items-center gap-4">
+                  <p class="whitespace-nowrap">কারিগরি সহায়তায়:</p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_one.svg" class="h-[41px] w-[76px]" />
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_two.svg" class="h-[41px] w-[76px]" />
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_three.svg" class="h-[41px] w-[76px]" />
+                  </a>
+                </div>
+                <span class="text-sm text-gray-400">
+                  পরিকল্পনা ও বাস্তবায়নে:
+                  <span class="cursor-pointer underline">মন্ত্রিপরিষদ বিভাগ</span>
+                  ,
+                  <span class="cursor-pointer underline">এটুআই</span>
+                  ,
+                  <span class="cursor-pointer underline">বিসিসি</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#536967]">
+          <div
+            class="container mx-auto flex flex-col items-center justify-between px-4 py-4 text-center text-sm sm:flex-row"
+          >
+            <span class="opacity-65">গোপনীয়তার নীতিমালা</span>
+            <span class="opacity-65">ব্যবহারের শর্তাবলি</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

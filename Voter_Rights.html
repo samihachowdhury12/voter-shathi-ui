@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter's Friend Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind build: External CSS for Tailwind styles -->
+    <link href="./output.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f4f8;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-bangla">
+    <!-- ================= HEADER ================= -->
+    <header class="w-full bg-white font-bangla shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center gap-4">
+            <a class="text-teal-600" href="#">
+              <img src="./images/logo.svg" alt="Logo" class="h-14 w-14" />
+            </a>
+            <p class="font-bangla text-lg font-semibold">ভোটের সাথী</p>
+          </div>
+
+          <div class="md:flex md:items-center md:gap-12">
+            <nav aria-label="Global" class="hidden md:block">
+              <ul class="flex items-center gap-6 text-sm">
+                <li>
+                  <a
+                    class="font-bangla text-gray-700 transition hover:text-teal-600"
+                    href="./index.html"
+                  >
+                    হোম
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="font-bangla text-gray-700 transition hover:text-teal-600"
+                    href="./candidate_list.html"
+                  >
+                    প্রার্থী তালিকা
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla text-gray-700 transition hover:text-teal-600" href="#">
+                    ভোটার টুলস
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla font-medium text-teal-600 transition" href="#">
+                    প্রশ্নোত্তর
+                  </a>
+                </li>
+                <li>
+                  <a class="font-bangla text-gray-700 transition hover:text-teal-600" href="#">
+                    ফলাফল
+                  </a>
+                </li>
+                <li>
+                  <div
+                    class="flex flex-row items-center gap-0 rounded-full border border-[#DEE7E6] p-1"
+                  >
+                    <div
+                      class="relative inline-block rounded-full bg-[#1B1A34] px-3 py-1 text-left text-sm text-white"
+                    >
+                      বাংলা
+                    </div>
+                    <div class="relative inline-block px-3 py-1 text-left">ENG</div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="flex cursor-pointer items-center gap-4">
+              <div class="flex cursor-pointer flex-row items-center justify-center gap-2">
+                <img src="./images/login_icon.svg" alt="Login" class="h-6 w-6" />
+                <a
+                  class="rounded-md text-sm font-medium text-gray-700 hover:text-teal-600"
+                  href="./login.html"
+                >
+                  লগইন করুন
+                </a>
+              </div>
+
+              <div class="block md:hidden">
+                <button
+                  class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT CONTAINER ================= -->
+    <div class="container mx-auto max-w-6xl px-4 py-6 md:px-8">
+      <div class="flex min-h-screen gap-6">
+        <!-- ===== SIDEBAR: Navigation Menu ===== -->
+        <div class="w-64 bg-white shadow-sm">
+          <div class="p-6">
+            <!-- Navigation Menu: Sidebar links -->
+            <nav class="space-y-2">
+              <!-- Link: আমার প্রশ্নসমূহ -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">আমার প্রশ্নসমূহ</span>
+              </a>
+
+              <!-- Link: আপনার নিবন্ধন অবস্থা জানুন (active) -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg bg-teal-600 p-2 text-white transition"
+              >
+                <div class="h-10 w-10 rounded-md bg-white"></div>
+                <span class="text-base font-normal">আপনার নিবন্ধন অবস্থা জানুন</span>
+              </a>
+
+              <!-- Link: প্রার্থী তালিকা -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">প্রার্থী তালিকা</span>
+              </a>
+
+              <!-- Link: ফলাফল -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">ফলাফল</span>
+              </a>
+
+              <!-- Link: নির্বাচন দিবস সহায়তা -->
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">নির্বাচন দিবস সহায়তা</span>
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+              >
+                <div class="h-10 w-10 rounded-md bg-[#D9D9D9]"></div>
+                <span class="text-base font-normal text-primary-300">প্রোফাইল সেটিংস</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="bg--white flex-1">
+          <!-- Header Section: Page Title and Go Back Button -->
+          <div class="bg-white px-6 pt-8">
+            <!-- Go Back Button: Navigates to previous page -->
+            <div class="mb-4">
+              <a
+                href="javascript:history.back()"
+                class="flex items-center text-sm font-medium text-gray-600 hover:text-teal-700"
+              >
+                <!-- Left Arrow Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mr-1 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                পেছনে ফেরত যান
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <div class="mb-4 flex items-center gap-4">
+                <img src="images/social-justice 1.png" />
+
+                <div>
+                  <p class="font-bangla text-xl font-semibold text-primary-light">
+                    আপনার অধিকার জানুন
+                  </p>
+                  <p>আপনার ভোট দেওয়ার অধিকার ও নিরাপত্তা জানুন</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= VOTER RIGHTS SECTION ================= -->
+            <section class="bg-gray-50 py-8">
+              <div class="container mx-auto max-w-4xl px-4">
+                <!-- Section title: Rights Overview -->
+                <h2 class="mb-4 text-lg font-semibold text-gray-800">
+                  ভোটারের অধিকারসমূহ - বিস্তৃত
+                </h2>
+
+                <!-- Card: Rights Details -->
+                <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
+                  <!-- Block: ভোট দেওয়ার অধিকার -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">ভোট দেওয়ার অধিকার</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>১৮ বছর বা তার ঊর্ধ্বে নাগরিক ভোট দিতে পারেন।</li>
+                          <li>
+                            ভোটার তালিকায় আপনার তথ্য সঠিক রাখতে ভোটার নিবন্ধন ও হালনাগাদ জরুরি।
+                          </li>
+                          <li>ভোটের সময়সূচি সম্পর্কে সঠিক ও সময়মতো তথ্য জানতে হবে।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: গোপনীয় ভোটাধিকার -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">গোপনীয় ভোটাধিকার</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>আপনি গোপনে ভোট দেবেন; কেউ আপনার ভোট জানতে পারবে না।</li>
+                          <li>কেউ আপনার উপর চাপ সৃষ্টি করে ভোট দিতে বাধ্য করতে পারবে না।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: সমান সুযোগ ও সুবিধা -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">সমান সুযোগ ও সুবিধা</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>সবাই সমানভাবে কেন্দ্রে প্রবেশ ও সুবিধা পাবেন।</li>
+                          <li>কেন্দ্রে ভোট দেওয়ার জন্য কোনো ফি/খরচ দিতে হয় না।</li>
+                          <li>ভোটের সময় হুমকি, ভয়, ঘুষ, বা অসদাচরণ গ্রহণযোগ্য নয়।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: নিরাপদ ও সুশৃঙ্খল ভোট -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">নিরাপদ ও সুশৃঙ্খল ভোট</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>কেন্দ্রে নিরাপত্তা ও শৃঙ্খলা নিশ্চিত করা হয়।</li>
+                          <li>
+                            ভোট চলাকালীন বিশৃঙ্খলা বা সহিংসতা সহ্য করা হবে না; প্রয়োজনে সাহায্য
+                            চান।
+                          </li>
+                          <li>
+                            জরুরি প্রয়োজনে সহায়তার জন্য প্রথমিক চিকিৎসা/সহায়তা পাওয়া যেতে পারে।
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: সহায়তার অধিকার -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">সহায়তার অধিকার</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>
+                            প্রয়োজনে সহায়তাকারী, নির্বাচনি কর্মকর্তা, বা অনুমোদিত এজেন্টদের
+                            সহায়তা চাইতে পারবেন।
+                          </li>
+                          <li>ভোটিং সংক্রান্ত প্রশ্ন থাকলে বুথের কর্মকর্তার সাথে কথা বলুন।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: অভিযোগ জানানোর অধিকার -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">অভিযোগ জানানোর অধিকার</h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>
+                            কোনো অনিয়ম/হুমকি/বাধার মুখে পড়লে তাৎক্ষণিকভাবে অভিযোগ জানানোর অধিকার
+                            রয়েছে।
+                          </li>
+                          <li>কেন্দ্রের প্রিজাইডিং অফিসার বা কর্তৃপক্ষকে জানান।</li>
+                          <li>Election Commission-এও অভিযোগ করা যাবে।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: প্রয়োজনীয় তথ্য জানার অধিকার -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">
+                          প্রয়োজনীয় তথ্য জানার অধিকার
+                        </h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>
+                            ভোটের দিন/সময়/কেন্দ্র/নির্দেশনা—সব বিষয়ে পরিষ্কার তথ্য জানতে পারবেন।
+                          </li>
+                          <li>
+                            নির্বাচনি বিজ্ঞপ্তি ও নির্দেশনা অফিসিয়াল পোর্টাল বা অ্যাপ-এ থাকে।
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4 border-gray-200" />
+
+                  <!-- Block: প্রথমবারের ভোটারদের জন্য বিশেষ নির্দেশনা -->
+                  <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                      <img src="./images/check_.png" alt="" class="mt-1 h-5 w-5" />
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">
+                          প্রথমবারের ভোটারদের জন্য বিশেষ নির্দেশনা
+                        </h3>
+                        <ul class="ml-5 list-disc space-y-1 text-sm text-gray-700">
+                          <li>কেন্দ্রে যাওয়ার আগে প্রয়োজনীয় পরিচয়পত্র প্রস্তুত রাখুন।</li>
+                          <li>ভোটের কক্ষের নিয়ম মেনে চলুন; কর্মকর্তার নির্দেশ অনুসরণ করুন।</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Questions Section: (Add questions here if needed) -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#3B4A49] pt-4 font-bangla text-white sm:pt-6 lg:pt-8">
+      <div class="pt-12 text-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-6 lg:gap-8">
+            <!-- Left: Logo, description, social -->
+            <div class="lg:col-span-2">
+              <!-- logo - start: Brand and logo -->
+              <div class="mb-4 lg:-mt-2">
+                <div class="flex items-center gap-4">
+                  <a class="text-teal-600" href="#">
+                    <img src="./images/logo.svg" alt="Logo" class="h-14 w-14" />
+                  </a>
+                  <p class="font-bangla text-lg font-semibold">ভোটের সাথী</p>
+                </div>
+              </div>
+              <!-- logo - end -->
+
+              <p class="mb-6 font-bangla opacity-65 sm:pr-8">
+                প্রার্থীদের সাথে যোগাযোগ করুন, প্রশ্ন জিজ্ঞাসা করুন এবং সচেতন সিদ্ধান্ত নিন। আমাদের
+                গণতন্ত্রের ভবিষ্যৎ গঠনে আপনার মতামত গুরুত্বপূর্ণ।
+              </p>
+
+              <!-- social - start: Social media icons -->
+              <div class="flex gap-4">
+                <!-- Social Icons Here -->
+              </div>
+              <!-- social - end -->
+            </div>
+
+            <!-- Right: Nav Columns -->
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-3">
+              <!-- nav - start: Home links -->
+              <div>
+                <div class="mb-4 font-bold uppercase tracking-widest">হোম</div>
+                <nav class="flex flex-col gap-1 font-bangla">
+                  <a
+                    href="./candidate_list.html"
+                    class="opacity-65 transition duration-100 hover:opacity-100"
+                  >
+                    প্রার্থীগণ
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    প্রশ্নোত্তর
+                  </a>
+                </nav>
+              </div>
+              <!-- nav - end -->
+
+              <!-- nav - start: Voter tools links -->
+              <div>
+                <div class="mb-4 font-bangla text-base font-bold">ভোটার সহায়তা টুলস</div>
+                <nav class="flex flex-col gap-1 font-bangla">
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    আমার নিবন্ধন অবস্থা
+                  </a>
+                  <a href="#" class="opacity-65 transition duration-100 hover:opacity-100">
+                    ভোটের সমস্যারতি
+                  </a>
+                </nav>
+              </div>
+              <!-- nav - end -->
+
+              <!-- nav - start: Contact info -->
+              <div>
+                <div class="mb-4 font-bangla font-bold">যোগাযোগ</div>
+                <p class="font-bangla text-sm leading-relaxed opacity-65">
+                  তথ্য ও যোগাযোগ প্রযুক্তি বিভাগ
+                  <br />
+                  আইসিটি টাওয়ার, আগারগাঁও, ঢাকা-১২০৭, বাংলাদেশ
+                  <br />
+                  <br />
+                  ফোন: +৮৮-০২-৪১০২৪২২২
+                  <br />
+                  ই-মেইল: admin.wing@ictd.gov.bd
+                </p>
+              </div>
+              <!-- nav - end -->
+            </div>
+          </div>
+          <div class="border-t border-white border-opacity-30">
+            <div class="">
+              <div class="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
+                <div class="flex items-center gap-4">
+                  <p class="whitespace-nowrap">কারিগরি সহায়তায়:</p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_one.svg" class="h-[41px] w-[76px]" />
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_two.svg" class="h-[41px] w-[76px]" />
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  >
+                    <img src="./images/image_three.svg" class="h-[41px] w-[76px]" />
+                  </a>
+                </div>
+                <span class="text-sm text-gray-400">
+                  পরিকল্পনা ও বাস্তবায়নে:
+                  <span class="cursor-pointer underline">মন্ত্রিপরিষদ বিভাগ</span>
+                  ,
+                  <span class="cursor-pointer underline">এটুআই</span>
+                  ,
+                  <span class="cursor-pointer underline">বিসিসি</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#536967]">
+          <div
+            class="container mx-auto flex flex-col items-center justify-between px-4 py-4 text-center text-sm sm:flex-row"
+          >
+            <span class="opacity-65">গোপনীয়তার নীতিমালা</span>
+            <span class="opacity-65">ব্যবহারের শর্তাবলি</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
